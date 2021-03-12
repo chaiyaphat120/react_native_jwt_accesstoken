@@ -125,8 +125,9 @@ const App: React.FC = () => {
             console.log("token register" ,token)
 
             //axios
-            await axios.get<dataUsertype2>(`http://192.168.1.150:3000/users/${token}`).then((response)=>{
+            await axios.get<dataUsertype2>(`https://node-demo20120.herokuapp.com/users/${token}`).then((response)=>{
                 const { _id,  email,  fullname,  role, tel,username} = response.data.data
+                console.log(response.data.data)
                 setDataUser({ _id,  email,  fullname,  role, tel,username})
             })
         } catch (error) {
